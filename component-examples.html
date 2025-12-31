@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[COMPANY NAME] - Design System Examples</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Design System CSS -->
+  <link rel="stylesheet" href="design-system.css">
+  
+  <style>
+    /* Example page styles */
+    .example-section {
+      margin-bottom: var(--space-24);
+    }
+    
+    .example-title {
+      margin-bottom: var(--space-6);
+      padding-bottom: var(--space-4);
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .example-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-6);
+      margin-top: var(--space-6);
+    }
+  </style>
+</head>
+<body>
+  <div class="container" style="padding-top: var(--space-24); padding-bottom: var(--space-24);">
+    
+    <h1 style="margin-bottom: var(--space-8);">[COMPANY NAME] Design System</h1>
+    <p class="text-muted" style="margin-bottom: var(--space-24);">Component examples and usage patterns</p>
+    
+    <!-- Typography -->
+    <section class="example-section">
+      <h2 class="example-title">Typography</h2>
+      <h1>Heading 1 - Main Page Title</h1>
+      <h2>Heading 2 - Section Title</h2>
+      <h3>Heading 3 - Subsection Title</h3>
+      <h4>Heading 4 - Card Title</h4>
+      <p>Body text - This is the default paragraph style. Use this for all body content. Keep sentences short and direct.</p>
+      <p class="text-muted">Muted text - Use this for secondary information, helper text, or less important content.</p>
+      <small>Small text - Use for captions, timestamps, or fine print.</small>
+    </section>
+    
+    <!-- Buttons -->
+    <section class="example-section">
+      <h2 class="example-title">Buttons</h2>
+      <div style="display: flex; gap: var(--space-4); flex-wrap: wrap; margin-bottom: var(--space-6);">
+        <button class="btn btn-primary">Get started</button>
+        <button class="btn btn-primary-accent">Book a demo</button>
+        <button class="btn btn-secondary">Learn more</button>
+        <button class="btn btn-ghost">Cancel</button>
+      </div>
+      <div style="display: flex; gap: var(--space-4); flex-wrap: wrap;">
+        <button class="btn btn-primary" disabled>Disabled</button>
+        <button class="btn btn-secondary" disabled>Disabled</button>
+      </div>
+    </section>
+    
+    <!-- Links -->
+    <section class="example-section">
+      <h2 class="example-title">Links</h2>
+      <p>This is a <a href="#">regular link</a> in a paragraph. Links are underlined on hover only.</p>
+      <p><a href="#">Standalone link</a></p>
+    </section>
+    
+    <!-- Inputs -->
+    <section class="example-section">
+      <h2 class="example-title">Inputs</h2>
+      <div style="max-width: 400px;">
+        <label style="display: block; margin-bottom: var(--space-2); font-weight: 500;">Name</label>
+        <input type="text" class="input" placeholder="Enter your name">
+        
+        <label style="display: block; margin-top: var(--space-6); margin-bottom: var(--space-2); font-weight: 500;">Work email</label>
+        <input type="email" class="input" placeholder="you@company.com">
+        <span class="input-helper">We'll never share your email.</span>
+        
+        <label style="display: block; margin-top: var(--space-6); margin-bottom: var(--space-2); font-weight: 500;">Message</label>
+        <textarea class="input" placeholder="Tell us what you're building..."></textarea>
+        
+        <label style="display: block; margin-top: var(--space-6); margin-bottom: var(--space-2); font-weight: 500;">Error State</label>
+        <input type="text" class="input input-error" value="invalid@email">
+        <span class="input-helper input-error-text">That email looks wrong.</span>
+        
+        <label style="display: block; margin-top: var(--space-6); margin-bottom: var(--space-2); font-weight: 500;">Disabled</label>
+        <input type="text" class="input" value="Disabled input" disabled>
+      </div>
+    </section>
+    
+    <!-- Cards -->
+    <section class="example-section">
+      <h2 class="example-title">Cards</h2>
+      <div class="example-grid">
+        <div class="card">
+          <h4 style="margin-bottom: var(--space-2);">Default Card</h4>
+          <p class="text-muted">This is a standard card with border and padding. Use for feature highlights or content sections.</p>
+        </div>
+        
+        <div class="card card-hover">
+          <h4 style="margin-bottom: var(--space-2);">Hover Card</h4>
+          <p class="text-muted">This card has hover effects. Use for interactive content or clickable cards.</p>
+        </div>
+        
+        <div class="card card-accent">
+          <h4 style="margin-bottom: var(--space-2);">Accent Card</h4>
+          <p class="text-muted">This card has a subtle accent border on top. Use to highlight important features.</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Badges -->
+    <section class="example-section">
+      <h2 class="example-title">Badges</h2>
+      <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+        <span class="badge badge-primary">New</span>
+        <span class="badge badge-success">Active</span>
+        <span class="badge badge-error">Error</span>
+        <span class="badge badge-warning">Warning</span>
+        <span class="badge badge-info">Info</span>
+      </div>
+    </section>
+    
+    <!-- Alerts -->
+    <section class="example-section">
+      <h2 class="example-title">Alerts</h2>
+      <div class="alert alert-success">
+        <strong>Success:</strong> Your message has been sent. We'll reply within 1–2 business days.
+      </div>
+      <div class="alert alert-error">
+        <strong>Error:</strong> That email looks wrong. Try again.
+      </div>
+      <div class="alert alert-warning">
+        <strong>Warning:</strong> Your plan will expire soon. Upgrade to continue.
+      </div>
+      <div class="alert alert-info">
+        <strong>Info:</strong> We're currently processing your request.
+      </div>
+    </section>
+    
+    <!-- Color Palette -->
+    <section class="example-section">
+      <h2 class="example-title">Color Palette</h2>
+      <div class="example-grid">
+        <div>
+          <h4 style="margin-bottom: var(--space-4);">Neutrals</h4>
+          <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+            <div style="display: flex; align-items: center; gap: var(--space-3);">
+              <div style="width: 60px; height: 60px; background: var(--text); border-radius: var(--r-md);"></div>
+              <div>
+                <div style="font-weight: 500;">Text</div>
+                <div style="font-size: var(--text-small); color: var(--text-muted);">#0B0B0B</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--space-3);">
+              <div style="width: 60px; height: 60px; background: var(--text-muted); border-radius: var(--r-md);"></div>
+              <div>
+                <div style="font-weight: 500;">Text Muted</div>
+                <div style="font-size: var(--text-small); color: var(--text-muted);">#6E6E6E</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--space-3);">
+              <div style="width: 60px; height: 60px; background: var(--border); border: 1px solid var(--border-strong); border-radius: var(--r-md);"></div>
+              <div>
+                <div style="font-weight: 500;">Border</div>
+                <div style="font-size: var(--text-small); color: var(--text-muted);">#E5E5E5</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--space-3);">
+              <div style="width: 60px; height: 60px; background: var(--bg-muted); border-radius: var(--r-md);"></div>
+              <div>
+                <div style="font-weight: 500;">Bg Muted</div>
+                <div style="font-size: var(--text-small); color: var(--text-muted);">#F2F2F2</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <h4 style="margin-bottom: var(--space-4);">Primary Accent (Blue)</h4>
+          <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+            <div style="display: flex; align-items: center; gap: var(--space-3);">
+              <div style="width: 60px; height: 60px; background: var(--accent-50); border-radius: var(--r-md);"></div>
+              <div>
+                <div style="font-weight: 500;">Accent 50</div>
+                <div style="font-size: var(--text-small); color: var(--text-muted);">Backgrounds</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--space-3);">
+              <div style="width: 60px; height: 60px; background: var(--accent-500); border-radius: var(--r-md);"></div>
+              <div>
+                <div style="font-weight: 500;">Accent 500</div>
+                <div style="font-size: var(--text-small); color: var(--text-muted);">Interactive</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--space-3);">
+              <div style="width: 60px; height: 60px; background: var(--accent-700); border-radius: var(--r-md);"></div>
+              <div>
+                <div style="font-weight: 500;">Accent 700</div>
+                <div style="font-size: var(--text-small); color: var(--text-muted);">Buttons/Links</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--space-3);">
+              <div style="width: 60px; height: 60px; background: var(--accent-800); border-radius: var(--r-md);"></div>
+              <div>
+                <div style="font-weight: 500;">Accent 800</div>
+                <div style="font-size: var(--text-small); color: var(--text-muted);">Text Accents</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Spacing Examples -->
+    <section class="example-section">
+      <h2 class="example-title">Spacing Scale</h2>
+      <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+        <div style="display: flex; align-items: center; gap: var(--space-4);">
+          <div style="width: var(--space-1); height: var(--space-1); background: var(--text); border-radius: 2px;"></div>
+          <span>--space-1 (4px)</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: var(--space-4);">
+          <div style="width: var(--space-2); height: var(--space-2); background: var(--text); border-radius: 2px;"></div>
+          <span>--space-2 (8px)</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: var(--space-4);">
+          <div style="width: var(--space-4); height: var(--space-4); background: var(--text); border-radius: 2px;"></div>
+          <span>--space-4 (16px)</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: var(--space-4);">
+          <div style="width: var(--space-6); height: var(--space-6); background: var(--text); border-radius: 2px;"></div>
+          <span>--space-6 (24px)</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: var(--space-4);">
+          <div style="width: var(--space-8); height: var(--space-8); background: var(--text); border-radius: 2px;"></div>
+          <span>--space-8 (32px)</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: var(--space-4);">
+          <div style="width: var(--space-12); height: var(--space-12); background: var(--text); border-radius: 2px;"></div>
+          <span>--space-12 (48px)</span>
+        </div>
+      </div>
+    </section>
+    
+  </div>
+</body>
+</html>
+

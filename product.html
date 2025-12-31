@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product - CallBite</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Design System CSS -->
+  <link rel="stylesheet" href="design-system.css">
+  
+  <!-- Translations -->
+  <script src="translations.js"></script>
+  
+  <style>
+    /* Navigation */
+    nav {
+      padding: var(--space-6) 0;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: var(--space-8);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .nav-links a {
+      color: var(--text);
+      font-weight: 500;
+    }
+    
+    .nav-links a:hover {
+      color: var(--accent-700);
+    }
+    
+    .logo {
+      font-family: var(--font-heading);
+      font-size: var(--text-h4);
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    
+    .logo img {
+      height: 32px;
+      width: auto;
+    }
+    
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+    }
+    
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: var(--space-24) 0;
+    }
+    
+    .hero h1 {
+      margin-bottom: var(--space-6);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .hero p {
+      font-size: var(--text-h4);
+      line-height: var(--leading-h4);
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* Feature Sections */
+    .feature-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+      align-items: center;
+      margin-bottom: 0;
+    }
+    
+    .feature-section-wrapper {
+      padding: var(--space-6) 0;
+    }
+    
+    .feature-section-wrapper:first-of-type {
+      padding-top: var(--space-12);
+    }
+    
+    .feature-section-wrapper:last-of-type {
+      padding-bottom: var(--space-12);
+    }
+    
+    .feature-section:nth-child(even) {
+      direction: rtl;
+    }
+    
+    .feature-section:nth-child(even) > * {
+      direction: ltr;
+    }
+    
+    .feature-content h3 {
+      margin-bottom: var(--space-4);
+    }
+    
+    .feature-visual {
+      border-radius: var(--r-2xl);
+      min-height: 450px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      padding: var(--space-8);
+    }
+    
+    .feature-visual img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+    
+    /* Integrations */
+    .integrations {
+      text-align: center;
+    }
+    
+    .integration-logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-8);
+      justify-content: center;
+      align-items: center;
+      margin-top: var(--space-8);
+    }
+    
+    .integration-logo {
+      padding: var(--space-4) var(--space-6);
+      color: var(--text-muted);
+      font-weight: 500;
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+    }
+    
+    @media (max-width: 1024px) {
+      .feature-section {
+        grid-template-columns: 1fr;
+      }
+      
+      .feature-section:nth-child(even) {
+        direction: ltr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="callbite_logo.png" alt="CallBite Logo">
+        <span>CallBite</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="product.html" data-i18n="nav.product">Product</a></li>
+        <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="lang-switcher">
+          <button data-lang="en" onclick="setLanguage('en')">EN</button>
+          <button data-lang="nl" onclick="setLanguage('nl')">NL</button>
+        </div>
+        <a href="contact.html" class="btn btn-primary" data-i18n="nav.cta">[Get started / Book a demo]</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="section">
+    <div class="container">
+      <div class="hero">
+        <h1 data-i18n="product.heroTitle">Everything you need to [CORE FUNCTION]</h1>
+        <p data-i18n="product.heroSubtitle">[Key features]—without busywork.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 1 -->
+  <section class="section feature-section-wrapper">
+    <div class="container">
+      <div class="feature-section">
+        <div class="feature-content">
+          <h3 data-i18n="product.feature1Title">[Feature 1 Name]</h3>
+          <p class="text-muted" data-i18n="product.feature1Desc">[2–3 sentences explaining the feature and its value. Be specific about what it does and why it matters to your users. Focus on concrete outcomes rather than abstract benefits.]</p>
+        </div>
+        <div class="feature-visual">
+          <img src="whataihandels.png" alt="What the AI Handles">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 2 -->
+  <section class="section feature-section-wrapper">
+    <div class="container">
+      <div class="feature-section">
+        <div class="feature-content">
+          <h3 data-i18n="product.feature2Title">[Feature 2 Name]</h3>
+          <p class="text-muted" data-i18n="product.feature2Desc">[2–3 sentences explaining the feature and its value. Be specific about what it does and why it matters to your users. Focus on concrete outcomes rather than abstract benefits.]</p>
+        </div>
+        <div class="feature-visual">
+          <img src="whycallbite.png" alt="Why CallBite">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 3 -->
+  <section class="section feature-section-wrapper">
+    <div class="container">
+      <div class="feature-section">
+        <div class="feature-content">
+          <h3 data-i18n="product.feature3Title">[Feature 3 Name]</h3>
+          <p class="text-muted" data-i18n="product.feature3Desc">[2–3 sentences explaining the feature and its value. Be specific about what it does and why it matters to your users. Focus on concrete outcomes rather than abstract benefits.]</p>
+        </div>
+        <div class="feature-visual">
+          <img src="ui.png" alt="Operator UI Dashboard">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div style="text-align: center; padding: var(--space-24) 0; background: var(--bg-muted); border-radius: var(--r-2xl);">
+        <h2 style="margin-bottom: var(--space-6);" data-i18n="product.ctaTitle">Ready to get started?</h2>
+        <a href="contact.html" class="btn btn-primary" data-i18n="product.ctaButton">[Get started / Book a demo]</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="padding: var(--space-12) 0; border-top: 1px solid var(--border); margin-top: var(--space-24);">
+    <div class="container">
+      <p class="text-muted" style="text-align: center; margin: 0;" data-i18n="common.footer">© [YEAR] [COMPANY NAME]. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

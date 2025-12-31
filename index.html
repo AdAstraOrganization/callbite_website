@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CallBite - Your Restaurant's Phone Line, Fully Automated with AI</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Design System CSS -->
+  <link rel="stylesheet" href="design-system.css">
+  
+  <!-- Translations -->
+  <script src="translations.js"></script>
+  
+  <style>
+    /* Navigation */
+    nav {
+      padding: var(--space-6) 0;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: var(--space-8);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .nav-links a {
+      color: var(--text);
+      font-weight: 500;
+    }
+    
+    .nav-links a:hover {
+      color: var(--accent-700);
+    }
+    
+    .logo {
+      font-family: var(--font-heading);
+      font-size: var(--text-h4);
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    
+    .logo img {
+      height: 32px;
+      width: auto;
+    }
+    
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+    }
+    
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: var(--space-24) 0;
+      position: relative;
+    }
+    
+    .hero-section {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('backgroundmain.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 1;
+      z-index: 0;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero-section {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero h1 {
+      margin-bottom: var(--space-6);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #FFFFFF;
+    }
+    
+    .hero p {
+      font-size: var(--text-h4);
+      line-height: var(--leading-h4);
+      color: #FFFFFF;
+      max-width: 600px;
+      margin: 0 auto var(--space-8);
+    }
+    
+    .hero-ctas {
+      display: flex;
+      gap: var(--space-4);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .hero-ctas .btn-secondary {
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(255, 255, 255, 1);
+      color: var(--text);
+    }
+    
+    .hero-ctas .btn-secondary:hover {
+      background: rgba(255, 255, 255, 1);
+      border-color: rgba(255, 255, 255, 1);
+    }
+    
+    /* Proof Strip */
+    .proof-strip {
+      text-align: center;
+      padding: var(--space-12) 0;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+    }
+    
+    /* Feature Cards */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-6);
+    }
+    
+    .feature-card {
+      padding: var(--space-6);
+    }
+    
+    .feature-card h3 {
+      margin-bottom: var(--space-3);
+    }
+    
+    /* How It Works */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-8);
+      text-align: center;
+    }
+    
+    .step-number {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--r-full);
+      background: var(--accent-100);
+      color: var(--accent-800);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      margin: 0 auto var(--space-4);
+    }
+    
+    /* Final CTA */
+    .final-cta {
+      text-align: center;
+      padding: var(--space-24) 0;
+      background: var(--bg-muted);
+      border-radius: var(--r-2xl);
+    }
+    
+    /* Mobile Navigation */
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+      
+      .hero {
+        padding: var(--space-16) 0;
+      }
+      
+      .hero-ctas {
+        flex-direction: column;
+      }
+      
+      .hero-ctas .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="callbite_logo.png" alt="CallBite Logo">
+        <span>CallBite</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="product.html" data-i18n="nav.product">Product</a></li>
+        <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="lang-switcher">
+          <button data-lang="en" onclick="setLanguage('en')">EN</button>
+          <button data-lang="nl" onclick="setLanguage('nl')">NL</button>
+        </div>
+        <a href="contact.html" class="btn btn-primary" data-i18n="nav.cta">[Get started / Book a demo]</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="section hero-section">
+    <div class="hero-background"></div>
+    <div class="container">
+      <div class="hero">
+        <div class="hero-content">
+          <h1 data-i18n="home.heroTitle">[COMPANY NAME] helps [WHAT WE DO IN 1 SENTENCE]</h1>
+          <p data-i18n="home.heroSubtitle">[One sentence that expands on the value proposition and explains the core benefit to your target audience.]</p>
+          <div class="hero-ctas">
+            <a href="contact.html" class="btn btn-primary" data-i18n="home.heroCTA">[Get started / Book a demo]</a>
+            <a href="product.html" class="btn btn-secondary" data-i18n="home.heroSecondary">View product</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="border-bottom: 1px solid var(--border);"></div>
+  </section>
+
+  <!-- Key Benefits -->
+  <section class="section">
+    <div class="container">
+      <div class="features-grid">
+        <div class="card feature-card">
+          <h3 data-i18n="home.benefit1Title">[KEY BENEFIT 1]</h3>
+          <p class="text-muted" data-i18n="home.benefit1Desc">[One sentence explaining how this benefit helps your users and what concrete outcome they can expect.]</p>
+        </div>
+        <div class="card feature-card">
+          <h3 data-i18n="home.benefit2Title">[KEY BENEFIT 2]</h3>
+          <p class="text-muted" data-i18n="home.benefit2Desc">[One sentence explaining how this benefit helps your users and what concrete outcome they can expect.]</p>
+        </div>
+        <div class="card feature-card">
+          <h3 data-i18n="home.benefit3Title">[KEY BENEFIT 3]</h3>
+          <p class="text-muted" data-i18n="home.benefit3Desc">[One sentence explaining how this benefit helps your users and what concrete outcome they can expect.]</p>
+        </div>
+        <div class="card feature-card">
+          <h3 data-i18n="home.benefit4Title">[KEY BENEFIT 4]</h3>
+          <p class="text-muted" data-i18n="home.benefit4Desc">[One sentence explaining how this benefit helps your users and what concrete outcome they can expect.]</p>
+        </div>
+        <div class="card feature-card">
+          <h3 data-i18n="home.benefit5Title">[KEY BENEFIT 5]</h3>
+          <p class="text-muted" data-i18n="home.benefit5Desc">[One sentence explaining how this benefit helps your users and what concrete outcome they can expect.]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: var(--space-12);" data-i18n="home.howItWorks">How it works</h2>
+      <div class="steps">
+        <div>
+          <div class="step-number">1</div>
+          <h4 data-i18n="home.step1Title">[Step 1 Name]</h4>
+          <p class="text-muted" data-i18n="home.step1Desc">[One sentence description of what happens in this step and why it matters.]</p>
+        </div>
+        <div>
+          <div class="step-number">2</div>
+          <h4 data-i18n="home.step2Title">[Step 2 Name]</h4>
+          <p class="text-muted" data-i18n="home.step2Desc">[One sentence description of what happens in this step and why it matters.]</p>
+        </div>
+        <div>
+          <div class="step-number">3</div>
+          <h4 data-i18n="home.step3Title">[Step 3 Name]</h4>
+          <p class="text-muted" data-i18n="home.step3Desc">[One sentence description of what happens in this step and why it matters.]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="final-cta">
+        <h2 style="margin-bottom: var(--space-4);" data-i18n="home.finalCTATitle">Start today.</h2>
+        <p class="text-muted" style="margin-bottom: var(--space-8);" data-i18n="home.finalCTASubtitle">Set up in minutes.</p>
+        <a href="contact.html" class="btn btn-primary" data-i18n="home.finalCTAButton">[Get started / Book a demo]</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="padding: var(--space-12) 0; border-top: 1px solid var(--border); margin-top: var(--space-24);">
+    <div class="container">
+      <p class="text-muted" style="text-align: center; margin: 0;" data-i18n="common.footer">© [YEAR] [COMPANY NAME]. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
+

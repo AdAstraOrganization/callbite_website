@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - CallBite</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Design System CSS -->
+  <link rel="stylesheet" href="design-system.css">
+  
+  <!-- Translations -->
+  <script src="translations.js"></script>
+  
+  <style>
+    /* Navigation */
+    nav {
+      padding: var(--space-6) 0;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: var(--space-8);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .nav-links a {
+      color: var(--text);
+      font-weight: 500;
+    }
+    
+    .nav-links a:hover {
+      color: var(--accent-700);
+    }
+    
+    .logo {
+      font-family: var(--font-heading);
+      font-size: var(--text-h4);
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    
+    .logo img {
+      height: 32px;
+      width: auto;
+    }
+    
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+    }
+    
+    /* Header */
+    .page-header {
+      text-align: center;
+      padding: var(--space-24) 0;
+    }
+    
+    .page-header h1 {
+      margin-bottom: var(--space-4);
+    }
+    
+    .page-header p {
+      font-size: var(--text-h4);
+      line-height: var(--leading-h4);
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* Contact Form */
+    .contact-form {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    .form-group {
+      margin-bottom: var(--space-6);
+    }
+    
+    .form-label {
+      display: block;
+      margin-bottom: var(--space-2);
+      font-weight: 500;
+    }
+    
+    .form-label .optional {
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+    
+    /* Alternative Contact */
+    .alternative-contact {
+      text-align: center;
+      margin-top: var(--space-24);
+      padding-top: var(--space-24);
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="callbite_logo.png" alt="CallBite Logo">
+        <span>CallBite</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="product.html" data-i18n="nav.product">Product</a></li>
+        <li><a href="pricing.html" data-i18n="nav.pricing">Pricing</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="lang-switcher">
+          <button data-lang="en" onclick="setLanguage('en')">EN</button>
+          <button data-lang="nl" onclick="setLanguage('nl')">NL</button>
+        </div>
+        <a href="contact.html" class="btn btn-primary" data-i18n="nav.cta">[Get started / Book a demo]</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="section">
+    <div class="container">
+      <div class="page-header">
+        <h1 data-i18n="contact.heroTitle">Contact [COMPANY NAME]</h1>
+        <p data-i18n="contact.heroSubtitle">Tell us what you're building. We'll reply within 1–2 business days.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="section">
+    <div class="container">
+      <form class="contact-form" action="#" method="POST">
+        <div class="form-group">
+          <label for="name" class="form-label" data-i18n="contact.nameLabel">Name</label>
+          <input type="text" id="name" name="name" class="input" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email" class="form-label" data-i18n="contact.emailLabel">Work email</label>
+          <input type="email" id="email" name="email" class="input" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="company" class="form-label">
+            <span data-i18n="contact.companyLabel">Company</span> 
+            <span class="optional" data-i18n="contact.companyOptional">(optional)</span>
+          </label>
+          <input type="text" id="company" name="company" class="input">
+        </div>
+        
+        <div class="form-group">
+          <label for="message" class="form-label" data-i18n="contact.messageLabel">Message</label>
+          <textarea id="message" name="message" class="input" rows="6" required></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="contact.sendButton">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Alternative Contact -->
+  <section class="section">
+    <div class="container">
+      <div class="alternative-contact">
+        <h3 style="margin-bottom: var(--space-4);" data-i18n="contact.alternativeTitle">Or reach us directly</h3>
+        <p class="text-muted">
+          Email: <a href="mailto:info@callbite.ai">info@callbite.ai</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="padding: var(--space-12) 0; border-top: 1px solid var(--border); margin-top: var(--space-24);">
+    <div class="container">
+      <p class="text-muted" style="text-align: center; margin: 0;" data-i18n="common.footer">© [YEAR] [COMPANY NAME]. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
