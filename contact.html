@@ -71,7 +71,7 @@
     /* Header */
     .page-header {
       text-align: center;
-      padding: var(--space-24) 0;
+      padding: var(--space-12) 0;
     }
     
     .page-header h1 {
@@ -93,7 +93,7 @@
     }
     
     .form-group {
-      margin-bottom: var(--space-6);
+      margin-bottom: var(--space-4);
     }
     
     .form-label {
@@ -110,9 +110,14 @@
     /* Alternative Contact */
     .alternative-contact {
       text-align: center;
-      margin-top: var(--space-24);
-      padding-top: var(--space-24);
+      margin-top: var(--space-12);
+      padding-top: var(--space-12);
       border-top: 1px solid var(--border);
+    }
+    
+    /* Reduce section spacing */
+    .section {
+      padding: var(--space-12) 0;
     }
     
     @media (max-width: 640px) {
@@ -202,7 +207,7 @@
   <!-- Contact Form -->
   <section class="section">
     <div class="container">
-      <form class="contact-form" action="#" method="POST">
+      <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
         <div class="form-group">
           <label for="name" class="form-label" data-i18n="contact.nameLabel">Name</label>
           <input type="text" id="name" name="name" class="input" required>
@@ -222,9 +227,21 @@
         </div>
         
         <div class="form-group">
+          <label for="package" class="form-label">Which pricing plan are you interested in?</label>
+          <select id="package" name="package" class="input" required>
+            <option value="">-- Select a plan --</option>
+            <option value="Starter">Starter - €99/month</option>
+            <option value="Growth">Growth - €199/month</option>
+            <option value="Scale">Scale - from €299/month</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
           <label for="message" class="form-label" data-i18n="contact.messageLabel">Message</label>
           <textarea id="message" name="message" class="input" rows="6" required></textarea>
         </div>
+        
+        <div id="formMessage" style="display: none; margin-bottom: var(--space-4); padding: var(--space-3); border-radius: var(--r-md);"></div>
         
         <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="contact.sendButton">Send</button>
       </form>
@@ -244,10 +261,68 @@
   </section>
 
   <!-- Footer -->
-  <footer style="padding: var(--space-12) 0; border-top: 1px solid var(--border); margin-top: var(--space-24);">
+  <footer style="padding: var(--space-12) 0; border-top: 1px solid var(--border); margin-top: var(--space-12);">
     <div class="container">
       <p class="text-muted" style="text-align: center; margin: 0;" data-i18n="common.footer">© [YEAR] [COMPANY NAME]. All rights reserved.</p>
     </div>
   </footer>
+  
+  <script>
+    // Contact Form Submission using Web3Forms (Free)
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      const form = this;
+      const submitButton = form.querySelector('button[type="submit"]');
+      const messageDiv = document.getElementById('formMessage');
+      const originalButtonText = submitButton.textContent;
+      
+      // Disable button and show loading
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
+      messageDiv.style.display = 'none';
+      
+      // Get form values using FormData
+      const formData = new FormData(form);
+      
+      // Add Web3Forms access key
+      formData.append('access_key', '117ad721-2158-40dc-9ba5-85ed6471ed74');
+      formData.append('subject', 'New Contact Form Submission from CallBite Website');
+      formData.append('from_name', 'CallBite Contact Form');
+      
+      // Send to Web3Forms (completely free, forwards to your Gmail)
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          // Success
+          messageDiv.style.display = 'block';
+          messageDiv.style.backgroundColor = 'var(--success-100)';
+          messageDiv.style.color = 'var(--success-600)';
+          messageDiv.style.border = '1px solid var(--success-600)';
+          messageDiv.textContent = 'Message sent successfully! We\'ll get back to you soon.';
+          form.reset();
+        } else {
+          throw new Error(data.message || 'Failed to send');
+        }
+      })
+      .catch(function(error) {
+        // Error
+        messageDiv.style.display = 'block';
+        messageDiv.style.backgroundColor = 'var(--error-100)';
+        messageDiv.style.color = 'var(--error-600)';
+        messageDiv.style.border = '1px solid var(--error-600)';
+        messageDiv.textContent = 'Failed to send message. Please try again or email us directly.';
+        console.error('Form Error:', error);
+      })
+      .finally(function() {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+      });
+    });
+  </script>
 </body>
 </html>

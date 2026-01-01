@@ -17,7 +17,7 @@ const translations = {
     home: {
       heroTitle: "Your Restaurant's Phone Line, Fully Automated with AI",
       heroSubtitle: "Answer every call instantly. Take orders, reservations, and questions in multiple languages—connected to your POS and makes your customers happy.",
-      heroCTA: "Get Your Offer",
+      heroCTA: "Pricing",
       heroSecondary: "View product",
       proof: "Built for restaurants.",
       benefit1Title: "No staff needed for the phone",
@@ -105,7 +105,7 @@ const translations = {
     
     // Common
     common: {
-      footer: "© 2024 CallBite. All rights reserved.",
+      footer: "© 2026 CallBite. All rights reserved.",
       placeholder: "[Screenshot or diagram placeholder]"
     }
   },
@@ -123,7 +123,7 @@ const translations = {
     home: {
       heroTitle: "De Telefoonlijn van Uw Restaurant, Volledig Geautomatiseerd met AI",
       heroSubtitle: "Beantwoord elke oproep direct. Neem bestellingen, reserveringen en vragen aan in meerdere talen—verbonden met uw POS en maakt uw klanten blij.",
-      heroCTA: "Krijg Uw Aanbieding",
+      heroCTA: "Prijzen",
       heroSecondary: "Bekijk product",
       proof: "Gebouwd voor restaurants.",
       benefit1Title: "Geen personeel nodig voor de telefoon",
@@ -211,7 +211,7 @@ const translations = {
     
     // Common
     common: {
-      footer: "© 2024 CallBite. Alle rechten voorbehouden.",
+      footer: "© 2026 CallBite. Alle rechten voorbehouden.",
       placeholder: "[Screenshot of diagram plaatshouder]"
     }
   }
