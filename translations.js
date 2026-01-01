@@ -105,7 +105,7 @@ const translations = {
     
     // Common
     common: {
-      footer: "© 2026 CallBite. All rights reserved.",
+      footer: "© 2026 CallBite from AdastraAI. All rights reserved.",
       placeholder: "[Screenshot or diagram placeholder]"
     }
   },
@@ -211,7 +211,7 @@ const translations = {
     
     // Common
     common: {
-      footer: "© 2026 CallBite. Alle rechten voorbehouden.",
+      footer: "© 2026 CallBite from AdastraAI. Alle rechten voorbehouden.",
       placeholder: "[Screenshot of diagram plaatshouder]"
     }
   }
