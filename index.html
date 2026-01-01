@@ -162,12 +162,19 @@
     }
     
     /* How It Works */
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: var(--space-8);
-      text-align: center;
-    }
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--space-8);
+        text-align: center;
+      }
+      
+      @media (max-width: 640px) {
+        .steps {
+          grid-template-columns: 1fr;
+          gap: var(--space-6);
+        }
+      }
     
     .step-number {
       width: 48px;
@@ -192,20 +199,70 @@
     
     /* Mobile Navigation */
     @media (max-width: 640px) {
+      nav .container {
+        flex-wrap: wrap;
+        gap: var(--space-4);
+      }
+      
       .nav-links {
         display: none;
       }
       
+      .nav-right {
+        flex-wrap: wrap;
+        gap: var(--space-2);
+      }
+      
+      .nav-right .btn {
+        font-size: var(--text-small);
+        padding: 10px 16px;
+      }
+      
+      .logo {
+        font-size: var(--text-body);
+      }
+      
+      .logo img {
+        height: 24px;
+      }
+      
       .hero {
-        padding: var(--space-16) 0;
+        padding: var(--space-12) 0;
+      }
+      
+      .hero h1 {
+        font-size: 28px;
+        line-height: 36px;
+        padding: 0 var(--space-4);
+      }
+      
+      .hero p {
+        font-size: var(--text-body);
+        padding: 0 var(--space-4);
       }
       
       .hero-ctas {
         flex-direction: column;
+        width: 100%;
+        padding: 0 var(--space-4);
       }
       
       .hero-ctas .btn {
         width: 100%;
+      }
+      
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+      }
+      
+      .steps {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+      }
+      
+      .final-cta {
+        padding: var(--space-12) var(--space-4);
       }
     }
   </style>

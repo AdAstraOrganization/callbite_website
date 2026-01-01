@@ -166,8 +166,60 @@
     }
     
     @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 28px;
+        line-height: 36px;
+        padding: 0 var(--space-4);
+      }
+      
+      .hero p {
+        font-size: var(--text-body);
+        padding: 0 var(--space-4);
+      }
+      
       .pricing-grid {
         grid-template-columns: 1fr;
+        gap: var(--space-4);
+      }
+      
+      .pricing-card {
+        padding: var(--space-4);
+      }
+      
+      .pricing-price {
+        font-size: 36px;
+        margin: var(--space-4) 0 var(--space-2);
+      }
+      
+      .faq {
+        padding: 0 var(--space-4);
+      }
+      
+      nav .container {
+        flex-wrap: wrap;
+        gap: var(--space-4);
+      }
+      
+      .nav-links {
+        display: none;
+      }
+      
+      .nav-right {
+        flex-wrap: wrap;
+        gap: var(--space-2);
+      }
+      
+      .nav-right .btn {
+        font-size: var(--text-small);
+        padding: 10px 16px;
+      }
+      
+      .logo {
+        font-size: var(--text-body);
+      }
+      
+      .logo img {
+        height: 24px;
       }
     }
   </style>

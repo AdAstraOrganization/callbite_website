@@ -165,10 +165,69 @@
     @media (max-width: 1024px) {
       .feature-section {
         grid-template-columns: 1fr;
+        gap: var(--space-6);
       }
       
       .feature-section:nth-child(even) {
         direction: ltr;
+      }
+      
+      .feature-visual {
+        min-height: 300px;
+        padding: var(--space-4);
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 24px;
+        line-height: 32px;
+        padding: 0 var(--space-4);
+      }
+      
+      .hero p {
+        font-size: var(--text-body);
+        padding: 0 var(--space-4);
+      }
+      
+      .feature-content h3 {
+        font-size: 20px;
+      }
+      
+      .feature-visual {
+        min-height: 250px;
+        padding: var(--space-3);
+      }
+      
+      .feature-visual img {
+        max-width: 100%;
+      }
+      
+      nav .container {
+        flex-wrap: wrap;
+        gap: var(--space-4);
+      }
+      
+      .nav-links {
+        display: none;
+      }
+      
+      .nav-right {
+        flex-wrap: wrap;
+        gap: var(--space-2);
+      }
+      
+      .nav-right .btn {
+        font-size: var(--text-small);
+        padding: 10px 16px;
+      }
+      
+      .logo {
+        font-size: var(--text-body);
+      }
+      
+      .logo img {
+        height: 24px;
       }
     }
   </style>
